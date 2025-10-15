@@ -120,11 +120,11 @@ The system is engineered to manage **three conversational states**:
 
 **CONTEXTUAL INPUTS:**
 
-
+```
 RAG_CONTEXT: what are the ways to pay for my order
 CHAT_HISTORY: We accept major credit cards, debit cards, and PayPal as payment methods for online orders. | Can I use that for my refund?
 CURRENT_USER_QUERY: I apologize, I was unable to find a definitive answer in our FAQs. I will now simulate an escalation to a human agent.
-
+```
 
 ---
 
