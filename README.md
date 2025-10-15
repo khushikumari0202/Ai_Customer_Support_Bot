@@ -2,7 +2,6 @@
 
 
 
-````markdown
 # 🤖 AI Customer Support Bot
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
@@ -10,7 +9,7 @@
 ![LLM](https://img.shields.io/badge/Powered%20By-Gemini%202.5%20Flash-orange)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
----
+
 
 ## 🧠 Project Overview
 The **AI Customer Support Bot** is a high-performance conversational assistant built using **FastAPI**.  
