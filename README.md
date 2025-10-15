@@ -61,7 +61,8 @@ This project is designed for **e-commerce platforms** to handle FAQs, manage ses
    ```bash
    git clone [YOUR REPO URL]
    cd ai-customer-support-bot
-````
+   ```
+
 
 2. **Install Dependencies**
 
