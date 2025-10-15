@@ -59,7 +59,7 @@ This project is designed for **e-commerce platforms** to handle FAQs, manage ses
 
 1. **Clone the Repository**
    ```bash
-   git clone [YOUR REPO URL]
+   git clone https://github.com/khushikumari0202/Ai_Customer_Support_Bot
    cd ai-customer-support-bot
    ```
 
