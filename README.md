@@ -1,9 +1,6 @@
 # Ai_Customer_Support_Bot
 
-Absolutely ✅ — here’s the **complete, ready-to-use `README.md` file** code.
-You can **copy-paste it directly** into your GitHub repository — it’s properly formatted with headings, badges, emojis, and clean Markdown styling 👇
 
----
 
 ````markdown
 # 🤖 AI Customer Support Bot
