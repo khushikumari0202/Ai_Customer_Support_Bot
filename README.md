@@ -121,9 +121,9 @@ The system is engineered to manage **three conversational states**:
 **CONTEXTUAL INPUTS:**
 
 ```
-RAG_CONTEXT: [Retrieved FAQ content]
-CHAT_HISTORY: [Conversation history]
-CURRENT_USER_QUERY: [Latest user query]
+RAG_CONTEXT: what are the ways to pay for my order
+CHAT_HISTORY: We accept major credit cards, debit cards, and PayPal as payment methods for online orders.
+CURRENT_USER_QUERY: Can I use that for my refund?
 ```
 
 ---
@@ -231,9 +231,8 @@ Available automatically at 👉 **`/docs`**
 ## 👨‍💻 Author
 
 **Khushi Kumari**
-AI & Full Stack Developer | CSE @ VIT Bhopal
-📧 *[Your Email]*
-🌐 *[LinkedIn / Portfolio]*
+📧 *kk2682117@gmail.com*
+🌐 *[https://www.linkedin.com/in/khushi-kumari-582a02241/]*
 
 ---
 
@@ -245,9 +244,4 @@ This project is licensed under the **MIT License** — free to use, modify, and 
 
 ⭐ **If you like this project, don't forget to give it a star on GitHub!**
 
-```
-
----
-
-Would you like me to **add badges for technologies** (like FastAPI, Python, Gemini, RAG, etc.) or a **GitHub shields banner** for aesthetic enhancement (great for portfolio projects)?
 ```
