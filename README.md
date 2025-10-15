@@ -2,7 +2,9 @@
 Project Overview
 This project implements a high-performance AI Customer Support Bot designed to handle common customer inquiries using Retrieval-Augmented Generation (RAG) and maintain contextual memory throughout a conversation. It is exposed as a robust FastAPI backend service, fulfilling the requirements for conversational accuracy and session management.
 
-Key Technical Features
+***
+
+**Key Technical Features**
 RESTful API: Implemented using FastAPI with two primary endpoints: /chat for conversation and /history for session retrieval.
 
 LLM Integration: Leverages the gemini-2.5-flash model for intelligent response generation, summarization, and contextual awareness.
@@ -15,7 +17,9 @@ Escalation Logic: Simulates human hand-off when the bot cannot confidently answe
 
 Session Management: Database integration (e.g., in-memory dictionary or persistent DB) to track conversation history by session_id.
 
-🚀 Getting Started
+***
+
+**🚀 Getting Started**
 Prerequisites
 Python 3.10+
 
@@ -26,19 +30,20 @@ An ngrok Auth Token (for public access testing).
 Setup and Running Locally
 Clone the Repository:
 
-Bash
+```
 
 git clone [YOUR REPO URL]
 cd ai-customer-support-bot
 Install Dependencies:
 
-Bash
+```
+```
 
 pip install -r requirements.txt
 Set Environment Variables:
 Create a .env file or export your keys in the terminal:
-
-Bash
+```
+```
 
 export GEMINI_API_KEY="YOUR_GEMINI_API_KEY"
 export NGROK_AUTH_TOKEN="YOUR_NGROK_AUTH_TOKEN"
@@ -46,7 +51,7 @@ export NGROK_AUTH_TOKEN="YOUR_NGROK_AUTH_TOKEN"
 Run the FastAPI Server:
 Execute the main application file, which starts both the Uvicorn server and the ngrok tunnel.
 
-Bash
+```
 
 python app.py
 The server will start, and the console will output the public Ngrok URL, e.g.: https://unmonitored-perorational-nathaniel.ngrok-free.dev.
