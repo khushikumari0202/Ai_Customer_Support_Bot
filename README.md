@@ -1,111 +1,256 @@
 # Ai_Customer_Support_Bot
-Project Overview
-This project implements a high-performance AI Customer Support Bot designed to handle common customer inquiries using Retrieval-Augmented Generation (RAG) and maintain contextual memory throughout a conversation. It is exposed as a robust FastAPI backend service, fulfilling the requirements for conversational accuracy and session management.
 
-***
+Absolutely ✅ — here’s the **complete, ready-to-use `README.md` file** code.
+You can **copy-paste it directly** into your GitHub repository — it’s properly formatted with headings, badges, emojis, and clean Markdown styling 👇
 
-**Key Technical Features**
-RESTful API: Implemented using FastAPI with two primary endpoints: /chat for conversation and /history for session retrieval.
+---
 
-LLM Integration: Leverages the gemini-2.5-flash model for intelligent response generation, summarization, and contextual awareness.
+````markdown
+# 🤖 AI Customer Support Bot
 
-RAG System: Utilizes a pre-indexed FAQs dataset to ground responses, ensuring accuracy and relevance.
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Framework-success)
+![LLM](https://img.shields.io/badge/Powered%20By-Gemini%202.5%20Flash-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-Contextual Memory: Maintains conversation history within a session to support complex follow-up questions.
+---
 
-Escalation Logic: Simulates human hand-off when the bot cannot confidently answer a query.
+## 🧠 Project Overview
+The **AI Customer Support Bot** is a high-performance conversational assistant built using **FastAPI**.  
+It leverages **Retrieval-Augmented Generation (RAG)** and **contextual memory** to deliver accurate, context-aware, and human-like responses to customer inquiries.
 
-Session Management: Database integration (e.g., in-memory dictionary or persistent DB) to track conversation history by session_id.
+This project is designed for **e-commerce platforms** to handle FAQs, manage sessions, and simulate human escalation when necessary.
 
-***
+---
 
-**🚀 Getting Started**
-Prerequisites
-Python 3.10+
+## ⚙️ Key Technical Features
 
-A Gemini API Key.
+- **🧩 RESTful API:**  
+  Built using **FastAPI**, with two key endpoints:
+  - `/chat` — handles real-time user queries  
+  - `/history` — retrieves chat history for a session  
 
-An ngrok Auth Token (for public access testing).
+- **🤖 LLM Integration:**  
+  Uses the **Gemini 2.5 Flash** model for:
+  - Intelligent and accurate responses  
+  - Summarization of context  
+  - Maintaining conversational awareness  
 
-Setup and Running Locally
-Clone the Repository:
+- **📚 Retrieval-Augmented Generation (RAG):**  
+  Utilizes a **pre-indexed FAQ dataset** to ensure fact-grounded, relevant answers.
 
-```
+- **🧠 Contextual Memory:**  
+  Maintains ongoing session context for understanding follow-up queries.
 
-git clone [YOUR REPO URL]
-cd ai-customer-support-bot
-Install Dependencies:
+- **🚨 Escalation Logic:**  
+  Simulates a **human hand-off** when the bot lacks confidence or relevant data.
 
-```
-```
+- **💾 Session Management:**  
+  Tracks user interactions using session IDs — supports both in-memory and persistent databases.
 
-pip install -r requirements.txt
-Set Environment Variables:
-Create a .env file or export your keys in the terminal:
-```
-```
+---
 
-export GEMINI_API_KEY="YOUR_GEMINI_API_KEY"
-export NGROK_AUTH_TOKEN="YOUR_NGROK_AUTH_TOKEN"
-# Note: If running on Colab, set these within the notebook environment.
-Run the FastAPI Server:
-Execute the main application file, which starts both the Uvicorn server and the ngrok tunnel.
+## 🚀 Getting Started
 
-```
+### 🧰 Prerequisites
+- Python **3.10+**
+- **Gemini API Key**
+- **Ngrok Auth Token** (for testing public access)
 
-python app.py
-The server will start, and the console will output the public Ngrok URL, e.g.: https://unmonitored-perorational-nathaniel.ngrok-free.dev.
+---
 
-🤖 LLM Implementation & Prompt Documentation
-The system is engineered to handle three distinct conversational states: RAG, Contextual Follow-up, and Escalation.
+### ⚡ Setup and Run Locally
 
-1. System Prompt (The Core Instruction)
-The following System Prompt governs the bot's tone, memory, and RAG usage:
+1. **Clone the Repository**
+   ```bash
+   git clone [YOUR REPO URL]
+   cd ai-customer-support-bot
+````
 
-Markdown
+2. **Install Dependencies**
 
-You are an AI Customer Support Agent for a modern e-commerce platform.
-Your persona is friendly, professional, and efficient.
-Your primary goal is to answer customer questions accurately using the provided FAQs.
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Set Environment Variables**
+   Create a `.env` file in the project root or export them directly:
+
+   ```bash
+   export GEMINI_API_KEY="YOUR_GEMINI_API_KEY"
+   export NGROK_AUTH_TOKEN="YOUR_NGROK_AUTH_TOKEN"
+   ```
+
+   > 💡 If running in Google Colab, set these variables inside your notebook.
+
+4. **Run the FastAPI Server**
+
+   ```bash
+   python app.py
+   ```
+
+   Once running, you’ll get a public URL from ngrok like:
+
+   ```
+   https://unmonitored-perorational-nathaniel.ngrok-free.dev
+   ```
+
+---
+
+## 🧠 LLM Implementation & Prompt Design
+
+The system is engineered to manage **three conversational states**:
+
+1. **RAG-Based Response**
+2. **Contextual Follow-up**
+3. **Escalation (Human Hand-off)**
+
+---
+
+### 🧾 System Prompt (Core Instruction)
+
+> You are an AI Customer Support Agent for a modern e-commerce platform.
+> Your persona is **friendly, professional, and efficient**.
+> Your primary goal is to answer customer questions accurately using the provided FAQs.
 
 **RULES:**
-1.  **Tone:** Be polite, professional, and concise. Do not use overly complex language.
-2.  **RAG/Fact-Grounded Response:** Always base your answer solely on the provided `RAG_CONTEXT`. If the context contains a definitive answer, provide it directly.
-3.  **Contextual Memory:** Use the `CHAT_HISTORY` to understand the current user query, especially if it relies on pronouns (like 'it' or 'that') or refers to a previous topic. Summarize the history only when necessary for context.
-4.  **Escalation Logic (Crucial):** If the `RAG_CONTEXT` is empty, or if your internal confidence score in the RAG result is too low, you MUST trigger the Escalation response. Do not invent an answer.
-5.  **Output Format:** Provide only the final response text. Do not include internal thoughts, scores, or intermediate steps.
+
+1. **Tone:** Be polite, professional, and concise.
+2. **Fact-Grounded Response:** Always use `RAG_CONTEXT` for answers.
+3. **Contextual Memory:** Refer to `CHAT_HISTORY` for follow-ups.
+4. **Escalation:** If unsure or lacking data, escalate — never guess.
+5. **Output:** Return only the final response (no reasoning or logs).
 
 **CONTEXTUAL INPUTS:**
-- RAG_CONTEXT: [Content retrieved from the FAQs database]
-- CHAT_HISTORY: [Previous conversation turns in a USER: X | ASSISTANT: Y format]
-- CURRENT_USER_QUERY: [The user's latest message]
-2. Escalation Logic (The Fail-Safe)
-The bot simulates a hand-off to a human agent when it cannot find a high-confidence answer. This logic is triggered programmatically before the final LLM call.
 
-Escalation Condition:
+```
+RAG_CONTEXT: [Retrieved FAQ content]
+CHAT_HISTORY: [Conversation history]
+CURRENT_USER_QUERY: [Latest user query]
+```
 
-The bot initiates escalation if the RAG search returns fewer than 1 highly relevant document (i.e., the similarity score for the top result is below 0.5 or the result list is empty).
+---
 
-Escalation Message:
+### ⚠️ Escalation Logic (Fail-Safe)
 
-"I apologize, I was unable to find a definitive answer in our FAQs. I will now simulate an escalation to a human agent. Please provide your order number and we will connect you to a specialist shortly."
+If the RAG search returns fewer than one relevant document
+(i.e., similarity score < 0.5 or no results), the bot triggers escalation.
 
-🔌 API Endpoints
-The API documentation is accessible via the public URL at the /docs route.
+**Escalation Message:**
 
-Endpoint	Method	Description	Request Body
-/chat	POST	The main conversational endpoint. Processes the user message, updates history, runs RAG, and returns the LLM response.	{ "session_id": "string", "user_message": "string" }
-/history/{session_id}	GET	Retrieves the full conversation transcript for a given session. Essential for session management and debugging.	None (requires session_id in path)
-/	GET	Read Root / API Health Check.	None
+> "I apologize, I was unable to find a definitive answer in our FAQs.
+> I will now simulate an escalation to a human agent.
+> Please provide your order number and we will connect you to a specialist shortly."
 
-Export to Sheets
-🎥 Demo Video
-Watch the short demonstration video to see all required features in action:
+---
 
-RAG Response: (Answering an FAQ question)
+## 🔌 API Endpoints
 
-Contextual Memory: (Handling a pronoun follow-up)
+| Endpoint                | Method | Description                                          | Request Body                                           |
+| ----------------------- | ------ | ---------------------------------------------------- | ------------------------------------------------------ |
+| `/`                     | GET    | API Health Check                                     | None                                                   |
+| `/chat`                 | POST   | Handles chat input, runs RAG, and returns LLM output | `{ "session_id": "string", "user_message": "string" }` |
+| `/history/{session_id}` | GET    | Fetches full chat history for a session              | None                                                   |
 
-Escalation: (Triggering the fail-safe message)
+**📘 API Documentation:**
+Available automatically at 👉 **`/docs`**
 
-Session History: (Retrieving the full transcript via the /history endpoint)
+---
+
+## 🎥 Demo Features
+
+* ✅ **RAG Response:** Answers common FAQ questions
+* 🧠 **Contextual Memory:** Understands pronouns and follow-ups
+* 🚨 **Escalation:** Gracefully transfers unresolved cases
+* 💬 **Session History:** Tracks complete conversation transcripts
+
+---
+
+## 🧩 Example Workflow
+
+**User:** "What is your return policy?"
+→ Bot answers based on RAG data
+
+**User:** "How long does it take?"
+→ Bot uses **contextual memory** to recall “return policy” context
+
+**User:** "Do you sell flight tickets?"
+→ Bot **escalates** since it’s beyond its knowledge scope
+
+---
+
+## 🛠️ Tech Stack
+
+| Component                      | Technology                      |
+| ------------------------------ | ------------------------------- |
+| **Backend Framework**          | FastAPI                         |
+| **Language**                   | Python                          |
+| **Model**                      | Gemini 2.5 Flash                |
+| **Vector Search / RAG Engine** | FAISS / Custom Embedding Search |
+| **Session Storage**            | In-memory or Persistent DB      |
+| **Tunneling**                  | Ngrok                           |
+
+---
+
+## 🏁 Future Enhancements
+
+* 🔐 Add authentication and role-based access
+* 📈 Integrate live chat dashboard for human agents
+* 🧩 Expand FAQ dataset dynamically
+* ☁️ Add persistent cloud storage for conversations
+
+---
+
+## 🧭 Project Architecture
+
+```text
+         ┌────────────────────────┐
+         │        User            │
+         └────────────┬───────────┘
+                      │
+                      ▼
+          ┌────────────────────┐
+          │     FastAPI API     │
+          │   (app.py server)   │
+          └─────────┬───────────┘
+                    │
+     ┌──────────────┼────────────────┐
+     │                              │
+     ▼                              ▼
+┌──────────────┐          ┌───────────────────┐
+│  RAG System  │          │  Context Manager  │
+│(FAQ Retriever│◄────────►│(Chat Memory/State)│
+└──────┬───────┘          └───────────────────┘
+       │
+       ▼
+┌──────────────────────┐
+│  Gemini 2.5 Flash LLM│
+│ (Response Generation)│
+└──────────────────────┘
+```
+
+---
+
+## 👨‍💻 Author
+
+**Khushi Kumari**
+AI & Full Stack Developer | CSE @ VIT Bhopal
+📧 *[Your Email]*
+🌐 *[LinkedIn / Portfolio]*
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** — free to use, modify, and distribute.
+
+---
+
+⭐ **If you like this project, don't forget to give it a star on GitHub!**
+
+```
+
+---
+
+Would you like me to **add badges for technologies** (like FastAPI, Python, Gemini, RAG, etc.) or a **GitHub shields banner** for aesthetic enhancement (great for portfolio projects)?
+```
